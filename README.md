@@ -18,7 +18,7 @@ Distributed Semaphore using redlock(redis)
 
     ```python
     lock_tag = 'cpu_loading'
-    with GlobalLock(lock_tag, 10, 3) as g_lock:
+    with DistributedSemaphore(lock_tag, 10, 3) as g_lock:
         calc_with_cpu()
     ```
 
@@ -31,6 +31,6 @@ Distributed Semaphore using redlock(redis)
 
     ```python
     lock_tag = 'read_mongo'
-    with GlobalLock(lock_tag, 5, 1) as g_lock:
+    with DistributedSemaphore(lock_tag, 5, 1) as g_lock:
         read_from_mongo()
     ```
